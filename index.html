@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Geometry Genius</title>
+</head>
+<body>
+
+    <!-- Geometry Header  -->
+    <header class="bg-[#1090D8] bg-opacity-[0.2] py-2">
+        <div class="w-[1200px] mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl text-black font-bold text-opacity-55">Interactive </h1>
+                <h2 class="text-xl text-opacity-40 text-black font-medium">Geometry Genius</h2>
+            </div>
+            <div>
+                <button class="px-[40px] text-white font-bold rounded-[10px] hover:bg-opacity-45 hover:text-black duration-500 py-3 bg-[#1090D8]" >Blog</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Geo Metry Header -->
+     <main class="py-10">
+        <div class="w-[1200px] mx-auto grid justify-between gap-4">
+            <div class="col-span-3 grid grid-cols-3 gap-4">
+                <!-- Cart 1 -->
+                    <div class="p-3 bg-slate-300 rounded-[8px] hover:bg-[#FBBCED]">
+                        <div class="mb-4 flex items-center justify-center">
+                            <img class="w-[250px] h-[200px]" src="./images/triangle.png" alt="">
+                        </div>
+                        <div class="flex flex-col justify-center items-center gap-2">
+                            <h1 class="text-2xl font-bold">Triangle</h1>
+                            <!-- <p>Area (A) = 0.5 * b * h</p> -->
+                            <div class="flex gap-4">
+                                <div class="flex items-center gap-2">
+                                    <input id="triangleBase" type="text" class="w-[69px] h-[30px] bg-white rounded-[5px] px-2" placeholder="b">
+                                    <span>cm</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input id="triangleHeight" type="text" class="w-[69px] h-[30px] bg-white rounded-[5px] px-2" placeholder="h">
+                                    <label for="" class="text-[13px] text-black">cm</label>
+                                </div>
+                            </div>
+                            <div>
+                                <h1>Area : <span id="areaSpan"></span><span> cm <sup>2</sup></span></h1>
+                            </div>
+                            <button class="bg-[#1090D8] btn w-[100%] hover:bg-white" onclick="Triangle()" >Calculate</button>
+                        </div>
+                    </div>
+                       <!-- Cart 2 -->
+                       <div class="p-3 bg-slate-300 rounded-[8px] hover:bg-[#FBBCED]">
+                        <div class="mb-4 flex items-center justify-center">
+                            <img class="w-[250px] h-[200px]" src="./images/rectangle.png" alt="">
+                        </div>
+                        <div class="flex flex-col justify-center items-center gap-2">
+                            <h1 class="text-2xl font-bold">Rectangle</h1>
+                            <!-- <p>Area (A) = w  * I</p> -->
+                            <div class="flex gap-4">
+                                <div class="flex items-center gap-2">
+                                    <input type="text" id="cartTwoInput1" class="w-[69px] h-[30px] bg-white rounded-[5px] px-2" placeholder="W">
+                                    <label for="">cm</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input type="text" id="cartTwoInput2" class="w-[69px] h-[30px] bg-white rounded-[5px] px-2" placeholder="L">
+                                    <label for="" class="text-[13px] text-black">cm</label>
+                                </div>
+                            </div>
+                            <div>
+                                <h1>Area : <span id="areaSpan2"></span><span> cm <sup>2</sup></span></h1>
+                            </div>
+                            <button class="bg-[#1090D8] btn w-[100%] hover:bg-white" onclick="Rectangle()" >Calculate</button>
+                        </div>
+                    </div>
+
+                                         <!-- Cart 3 -->
+                                         <div class="p-3 bg-slate-300 rounded-[8px] hover:bg-[#FBBCED]">
+                                            <div class="mb-4 flex items-center justify-center">
+                                                <img class="w-[250px] h-[200px]" src="./images/ellipse.png" alt="">
+                                            </div>
+                                            <div class="flex flex-col justify-center items-center gap-2">
+                                                <h1 class="text-2xl font-bold">Ellipse</h1>
+                                                <!-- <p>Area (A) =  πab</p> -->
+                                                <div class="flex gap-4">
+                                                    <div class="flex items-center gap-2">
+                                                        <input type="text" id="cartThreeInput1" class="w-[69px] h-[30px] bg-white rounded-[5px] px-2" placeholder="a">
+                                                        <label for="">cm</label>
+                                                    </div>
+                                                    <div class="flex items-center gap-2">
+                                                        <input type="text" id="cartThreeInput2" class="w-[69px] h-[30px] bg-white rounded-[5px] px-2" placeholder="b">
+                                                        <label for="" class="text-[13px] text-black">cm</label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <h1>Area : <span id="ellipseShow"></span><span> cm <sup>2</sup></span></h1>
+                                                </div>
+                                                <button class="bg-[#1090D8] btn w-[100%] hover:bg-white" onclick="Ellipse()" >Calculate</button>
+                                            </div>
+                                        </div>
+
+
+            </div>
+            <!-- Area show Calcalute -->
+            <!-- <div class="col-span-1">
+                <h1 class="text-3xl font-bold text-black text-opacity-40 text-center">Area Calculation</h1>
+            </div> -->
+        </div>
+     </main>
+
+
+
+
+
+
+
+   <script src="./js/Triangle.js"></script>
+</body>
+</html>
